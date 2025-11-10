@@ -9,65 +9,65 @@
 <body>
   <h1>Contact</h1>
 
-<div class="contact-card">
-  <form>
-    <table class="contact-table">
-      <tr>
-        <th class="title" colspan="2">Send a Message</th>
-      </tr>
+  <div class="contact-card">
+    <form>
+      <table class="contact-table">
+        <tr>
+          <th class="title">Send a Message</th>
+        </tr>
 
-      <tr>
-        <td class="label"><label for="name">Name:</label></td>
-        <td><input id="name" type="text" /></td>
-      </tr>
-      <tr>
-        <td class="label"><label for="email">Email:</label></td>
-        <td><input id="email" type="email" /></td>
-      </tr>
-      <tr>
-        <td class="label"><label for="phone">Phone:</label></td>
-        <td><input id="phone" type="tel" /></td>
-      </tr>
-      <tr>
-        <td class="label"><label for="subject">Subject:</label></td>
-        <td><input id="subject" type="text" /></td>
-      </tr>
-      <tr>
-        <td class="label top"><label for="message">Message:</label></td>
-        <td><textarea id="message" rows="5"></textarea></td>
-      </tr>
-      <tr>
-        <td class="actions" colspan="2">
-          <button type="submit">Send Message</button>
-        </td>
-      </tr>
-    </table>
-  </form>
-</div>
-<script>
-  
+        <tr><td class="row">
+          <div class="field" data-label="Name:">
+            <input id="name" type="text" aria-label="Name">
+          </div>
+        </td></tr>
+
+        <tr><td class="row">
+          <div class="field" data-label="Email:">
+            <input id="email" type="email" aria-label="Email">
+          </div>
+        </td></tr>
+
+        <tr><td class="row">
+          <div class="field" data-label="Phone:">
+            <input id="phone" type="tel" aria-label="Phone">
+          </div>
+        </td></tr>
+
+        <tr><td class="row">
+          <div class="field" data-label="Subject:">
+            <input id="subject" type="text" aria-label="Subject">
+          </div>
+        </td></tr>
+
+        <tr><td class="row">
+          <div class="ta-wrap" data-label="Message:">
+            <textarea id="message" rows="6" maxlength="500" aria-label="Message"></textarea>
+            <span class="ta-hint">Max 500 characters</span>
+          </div>
+        </td></tr>
+
+        <tr>
+          <td class="actions">
+            <button type="submit">Send Message</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <script>
   const form = document.querySelector('.contact-card form');
+  const sendSound = new Audio('send.mp3');
+  sendSound.preload = 'auto';
+  sendSound.volume = 0.1;
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', (e) => {
     e.preventDefault(); 
-
-   
-    const data = {
-      name:    document.getElementById('name').value.trim(),
-      email:   document.getElementById('email').value.trim(),
-      phone:   document.getElementById('phone').value.trim(),
-      subject: document.getElementById('subject').value.trim(),
-      message: document.getElementById('message').value.trim(),
-    };
-
+    sendSound.currentTime = 0;
+    sendSound.play();
+    alert('Message sent!');  
     
-    alert('Message sent!'); 
-
- 
-    console.log('DEBUG: form submit payload →', data);
-    console.table(data); 
   });
 </script>
-
 </body>
 </html>
