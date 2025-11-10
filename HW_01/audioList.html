@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Songs Table</title>
+  <link rel="stylesheet" href="audioList.css" />
+</head>
+<body>
+  <h1>My Songs</h1>
+
+  <table class="song-table">
+    <thead>
+      <tr>
+        <th>Cover</th>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Year</th>
+        <th>Play</th>
+        <th>Download</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Row 1: The Line — Twenty One Pilots -->
+      <tr>
+        <td class="cover">
+    
+          <img src="https://i.scdn.co/image/ab67616d00001e028a577010b0baa62c836e330b" alt="The Line cover">
+        </td>
+        <td>The Line</td>
+        <td>Twenty One Pilots</td>
+        <td>2024</td> 
+        <td class="player">
+          <audio controls preload="none">
+         
+            <source src="audio/Twenty One Pilots - “The Line” (from Arcane Season 2).mp3" type="audio/mpeg" />
+            
+          </audio>
+        </td>
+        <td class="download">
+     
+          <a href="audio/Twenty One Pilots - “The Line” (from Arcane Season 2).mp" download>Download</a>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td class="cover">
+         
+          <img src="https://i.scdn.co/image/ab67616d00001e0204802a3a9e155e4eaed25520" alt="Die For You cover">
+        </td>
+        <td>Die For You</td>
+        <td>VALORANT (ft. Grabbitz)</td>
+        <td>2021</td>
+        <td class="player">
+          <audio controls preload="none">
+          
+            <source src="audio/Die For You ft. Grabbitz.mp3" type="audio/mpeg" />
+    
+          </audio>
+        </td>
+        <td class="download">
+          
+          <a href="audio/Die For You ft. Grabbitz.mp3" download>Download</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
