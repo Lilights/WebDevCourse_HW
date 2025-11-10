@@ -58,3 +58,16 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
 }
+
+.header{
+    background-color: blue;
+    color: white;
+}
+.row-mark{
+    background-color: lightblue;
+    font-weight: 700;
+    color: blue;
+}
+.row-mark td, .row-mark th{
+    font-size: 1.5rem;
+}
