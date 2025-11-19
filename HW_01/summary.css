@@ -1,0 +1,127 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #e3f2ff, #f5f7ff);
+    margin: 40px;
+    color: #0f172a;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #475569;
+}
+
+/* container for nice centering */
+.prints-table {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.16);
+}
+
+.prints-table thead {
+    background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+    color: #ffffff;
+}
+
+.prints-table th,
+.prints-table td {
+    padding: 14px 18px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.prints-table th {
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+}
+
+/* zebra rows */
+.prints-table tbody tr:nth-child(even) {
+    background-color: #f1f5ff;
+}
+
+.prints-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* hover effect */
+.prints-table tbody tr:hover {
+    background-color: #e0efff;
+    transition: background-color 0.18s ease;
+}
+
+/* bigger images */
+.prints-table img {
+    max-width: 380px;   /* קצת יותר גדול */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+}
+
+/* links to commits */
+.prints-table a {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.prints-table a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* ---------- Lightbox styles ---------- */
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65); /* dark bluish overlay */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.lightbox-overlay.open {
+    display: flex;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.6);
+}
+
+/* Close button (X) */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-size: 2.2rem;
+    color: #e5f0ff;
+    cursor: pointer;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-close:hover {
+    color: #ffffff;
+}
