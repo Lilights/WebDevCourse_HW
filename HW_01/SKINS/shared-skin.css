@@ -1,0 +1,408 @@
+/* ===== Global look & feel – dark but soft ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding: 32px 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #1f2933, #020617);
+  color: #e5e7eb;
+}
+
+/* generic headings used in almost all pages */
+h1, h2 {
+  text-align: center;
+  margin: 0 0 12px;
+  color: #f9fafb;
+}
+
+p {
+  color: #cbd5f5;
+}
+
+/* Optional: top nav bar (if you use it) */
+.top-nav {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  margin: -16px auto 24px;
+  max-width: 1100px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #020617, #0b1220);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.7);
+}
+
+.top-nav a {
+  color: #e5f0ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Generic table styling (playlist, audioList, summary, tags tables) ===== */
+
+table {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #020617;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.85);
+}
+
+thead {
+  background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+}
+
+thead th {
+  padding: 14px 18px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #f9fafb;
+}
+
+tbody td,
+tbody th {
+  padding: 12px 16px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(51, 65, 85, 0.9);
+}
+
+tbody tr:nth-child(even) {
+  background: #020819;
+}
+
+tbody tr:nth-child(odd) {
+  background: #030712;
+}
+
+tbody tr:hover {
+  background: #0b1220;
+}
+
+/* playlist header row highlight (row-mark / header class) */
+.header {
+  background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+  color: #f9fafb;
+}
+
+.row-mark {
+  background: rgba(56, 189, 248, 0.15);
+  font-weight: 600;
+}
+
+.row-mark td,
+.row-mark th {
+  font-size: 1.1rem;
+}
+
+/* cells with images / iframes / media */
+td img {
+  max-width: 220px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  box-shadow: 0 8px 26px rgba(15, 23, 42, 0.7);
+}
+
+iframe {
+  width: 260px;
+  max-width: 100%;
+  height: 147px; /* 16:9 */
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.9);
+}
+
+/* ===== audioList-specific helpers (song-table, cover, player, download) ===== */
+
+.song-table {
+  /* uses the generic table look above */
+}
+
+.cover img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.player audio {
+  width: 230px;
+  max-width: 100%;
+}
+
+.download a {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+  color: #022c22;
+  box-shadow: 0 8px 18px rgba(22, 163, 74, 0.5);
+}
+
+.download a:hover {
+  filter: brightness(1.05);
+}
+
+/* ===== contact form card (contact.html) ===== */
+
+.contact-card {
+  width: 100%;
+  max-width: 480px;
+  margin: 24px auto 0;
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  background: radial-gradient(circle at top left, #0f172a, #020617);
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contact-table .title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 8px 4px 14px;
+  color: #e5f0ff;
+}
+
+.row {
+  padding: 6px 0;
+}
+
+.field,
+.ta-wrap {
+  position: relative;
+}
+
+.field input,
+.ta-wrap textarea {
+  width: 100%;
+  padding: 10px 14px;
+  padding-left: 110px; /* space for label */
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.field::before,
+.ta-wrap::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.ta-wrap textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.ta-hint {
+  position: absolute;
+  left: 16px;
+  bottom: 8px;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.actions {
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* generic buttons (applies also to contact send button, etc.) */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(59, 130, 246, 0.8);
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: #f9fafb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.7);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.8);
+}
+
+/* ===== summary screenshots table + lightbox ===== */
+
+.prints-table {
+  /* uses generic table styling */
+}
+
+.prints-table img {
+  max-width: 260px;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  box-shadow: 0 8px 26px rgba(15, 23, 42, 0.85);
+  cursor: zoom-in;
+}
+
+/* lightbox overlay (from summary.js interaction) */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.lightbox-overlay.open {
+  display: flex;
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 18px;
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-size: 2.3rem;
+  color: #e5f0ff;
+  cursor: pointer;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+}
+
+/* ===== Tags / general content spacing ===== */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+article, section, aside, footer {
+  margin-bottom: 24px;
+  background: rgba(15, 23, 42, 0.55);
+  border-radius: 16px;
+  padding: 16px 18px;
+  border: 1px solid rgba(30, 64, 175, 0.7);
+}
+
+article h2,
+section h3 {
+  margin-top: 0;
+}
+
+/* code / pre / blockquote prettier on dark */
+pre, code, samp, kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+pre {
+  background: #020617;
+  padding: 10px 12px;
+  border-radius: 10px;
+  overflow-x: auto;
+  border: 1px solid rgba(30, 64, 175, 0.7);
+}
+
+code {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+blockquote {
+  border-left: 3px solid #38bdf8;
+  padding-left: 12px;
+  color: #d1d5db;
+}
+
+/* small screens */
+@media (max-width: 640px) {
+  body {
+    padding: 18px 12px;
+  }
+  table {
+    font-size: 0.8rem;
+  }
+  iframe {
+    height: 140px;
+  }
+  .contact-card {
+    padding: 16px 14px;
+  }
+}
+
+
+
+.summary-page p {
+    text-align: center;
+}
+
+/* links on summary page – same color as paragraph text */
+.summary-page a {
+    color: #cbd5f5;
+}
+
+.summary-page a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}

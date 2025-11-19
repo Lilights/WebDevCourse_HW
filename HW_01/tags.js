@@ -1,4 +1,4 @@
-const skins = ["SKINS/basic.css","SKINS/dark.css","SKINS/modern.css"];
+const skins = ["SKINS/shared-skin.css" ,"SKINS/basic.css","SKINS/dark.css","SKINS/modern.css"];
 
 
 let currSkinIndx = 0;
