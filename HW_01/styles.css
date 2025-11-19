@@ -1,0 +1,120 @@
+/* Base layout */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    background: radial-gradient(circle at top, #1f2933, #020617);
+    color: #e5e7eb;
+}
+
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 20px 24px;
+}
+
+/* Header */
+
+.top-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.top-header h1 {
+    font-size: 2rem;
+    font-weight: 650;
+    margin: 0 0 8px;
+    color: #f9fafb;
+}
+
+.subtitle {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+/* Cards grid */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.card {
+    background: linear-gradient(145deg, #020617, #0b1220);
+    border-radius: 16px;
+    padding: 18px 18px 16px;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        border-color 0.16s ease,
+        background 0.2s ease;
+}
+
+.card h2 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+    color: #e5f0ff;
+}
+
+.card p {
+    margin: 0 0 14px;
+    font-size: 0.9rem;
+    color: #cbd5f5;
+}
+
+.card-link {
+    align-self: flex-start;
+    padding: 6px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    color: #f9fafb;
+    border: none;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.55);
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        filter 0.12s ease;
+}
+
+/* Hover effects */
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.85);
+    border-color: rgba(129, 140, 248, 0.9);
+    background: radial-gradient(circle at top left, #111827, #020617);
+}
+
+.card-link:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.7);
+}
+
+/* Footer */
+
+.main-footer {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
